@@ -1,5 +1,4 @@
 require './Questions'
-require './Players'
 
 class Game 
   def initialize()
@@ -9,15 +8,15 @@ class Game
    @turn = 1
   end
 
- def start_game
+  def start_game
   puts "Started my game"
   question = Question.new
   puts "Player#{@turn} #{@player1}: #{question.question}"
   puts "> "
   answer = gets.chomp
-  if answer.to_i == question.answer
-    puts "You are correct" 
-  else 
+    if answer.to_i == question.answer
+      puts "You are correct" 
+    else 
 # wrong answer, so we need to reduce lives
     puts "You are not correct" 
     if @turn == 1
@@ -32,14 +31,12 @@ class Game
   end
   
   # check if the game is over
-  # puts "-----NEW TURN---"
-  if @lives_player1 == 0 || @lives_player2 == 0
-    puts "---GAME OVER---"
-  else 
-    @turn = @turn == 1 ? 2 : 1
-    puts "Now the turn is #{@turn}"
-    start_game()
-  end
-end 
-  
+    if @lives_player1 == 0 || @lives_player2 == 0
+      puts "---GAME OVER---"
+    else 
+      @turn = @turn == 1 ? 2 : 1
+      puts "Now the turn is #{@turn}"
+      start_game()
+    end
+  end 
 end

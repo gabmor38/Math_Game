@@ -1,4 +1,3 @@
-require "./Players"
 require "./Questions"
 require "./Game"
 

@@ -8,15 +8,10 @@ class Question
     @answer = @num1 + @num2
   end
 
-
-
   def check_answer answer 
     if @answer == answer
-    #if @num1 + @num2 == answer
-      puts "Correct!"
       true
     else 
-      puts "Incorrect"
       false
     end
   end
